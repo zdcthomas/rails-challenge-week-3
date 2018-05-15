@@ -43,6 +43,13 @@ group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'capybara', '~> 2.13'
+  gem 'rspec-rails'
+  gem 'selenium-webdriver'
+  gem 'pry'
+  gem 'launchy'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
 end
 
 
