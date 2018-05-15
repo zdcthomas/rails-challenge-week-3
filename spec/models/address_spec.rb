@@ -1,12 +1,17 @@
 require 'rails_helper'
+student = Student.new(name:'Allison')
 describe Address do
+  before(:each) do
+    student = Student.create!(name:'Allison')
+  end
   describe 'validations' do
     context 'invalid attributes' do
       it 'should be invalid without street address' do
         address = Address.new(city: 'big city',
                               state: 'of being',
                               zip_code: 111111,
-                              description: "log cabin")
+                              description: "log cabin",
+                              student_id: student.id)
 
         expect(address).to be_invalid
       end
@@ -14,7 +19,8 @@ describe Address do
         address = Address.new(street_address:'1234 street road',
                               state: 'of being',
                               zip_code: 111111,
-                              description: "log cabin")
+                              description: "log cabin",
+                              student_id: student.id)
 
         expect(address).to be_invalid
       end
@@ -22,7 +28,8 @@ describe Address do
         address = Address.new(street_address:'1234 street road',
                               city: 'big city',
                               zip_code: 111111,
-                              description: "log cabin")
+                              description: "log cabin",
+                              student_id: student.id)
 
         expect(address).to be_invalid
       end
@@ -30,7 +37,8 @@ describe Address do
         address = Address.new(street_address:'1234 street road',
                               city: 'big city',
                               state: 'of being',
-                              description: "log cabin")
+                              description: "log cabin",
+                              student_id: student.id)
 
         expect(address).to be_invalid
       end
@@ -38,7 +46,8 @@ describe Address do
         address = Address.new(street_address:'1234 street road',
                               city: 'big city',
                               state: 'of being',
-                              description: "log cabin")
+                              description: "log cabin",
+                              student_id: student.id)
 
         expect(address).to be_invalid
       end
@@ -49,7 +58,8 @@ describe Address do
                               city: 'big city',
                               state: 'of being',
                               zip_code: 111111,
-                              description: "log cabin")
+                              description: "log cabin",
+                              student_id: student.id)
         expect(address).to be_valid
       end
     end
@@ -59,7 +69,8 @@ describe Address do
                                  city: 'big city',
                                  state: 'of being',
                                  zip_code: 111111,
-                                 description: "log cabin")
+                                 description: "log cabin",
+                                 student_id: student.id)
 
         expect(address).to respond_to(:student)
       end
