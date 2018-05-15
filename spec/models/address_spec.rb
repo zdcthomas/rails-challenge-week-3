@@ -40,5 +40,15 @@ describe Address do
         expect(address).to be_valid
       end
     end
+    context 'relationships' do
+      it 'should belong to a student' do
+        address = Address.create(street_address:'1234 street road',
+                                 city: 'big city',
+                                 state: 'of being',
+                                 zip_code: 111111)
+
+        expect(address).to respond_to(:student)
+      end
+    end
   end
 end
