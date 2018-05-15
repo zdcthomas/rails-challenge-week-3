@@ -46,10 +46,10 @@ describe Address do
     context 'valid attributes' do
       it 'should be valid with a street adress, city, state, and zip code' do
         address = Address.new(street_address:'1234 street road',
-                                      city: 'big city',
-                                      state: 'of being',
-                                      zip_code: 111111,
-                                      description: "log cabin")
+                              city: 'big city',
+                              state: 'of being',
+                              zip_code: 111111,
+                              description: "log cabin")
         expect(address).to be_valid
       end
     end
