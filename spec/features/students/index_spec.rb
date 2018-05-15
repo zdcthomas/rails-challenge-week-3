@@ -14,6 +14,11 @@ describe 'A User' do
       expect(page).to have_content(student3.name)
       expect(page).to have_content(student4.name)
     end
+    it 'should have a nav bar' do
+      visit students_path
+      expect(page).to have_link("Index")
+      expect(page).to have_link("New Student")
+    end
     context 'the name of each student' do
       it 'should be a link to that students show page' do
       student1 = Student.create!(name: 'Greg')

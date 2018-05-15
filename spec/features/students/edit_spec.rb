@@ -28,5 +28,10 @@ describe 'A User' do
 
       expect(page).to have_content(name)
     end
+    it 'should have a nav bar' do
+      visit edit_students_path
+      expect(page).to have_link("Index")
+      expect(page).to have_link("New Student")
+    end
   end
 end

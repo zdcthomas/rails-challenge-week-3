@@ -6,6 +6,12 @@ describe 'A User' do
 
       expect(page).to have_field('student[name]')
     end
+    it 'should have a nav bar' do
+      visit new_student_path
+
+      expect(page).to have_link("Index")
+      expect(page).to have_link("New Student")
+    end
     it 'should add a student to the database once a name is submitted' do
       visit new_student_path 
       name = 'JimBob'
