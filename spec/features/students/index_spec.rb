@@ -3,9 +3,9 @@ describe 'A User' do
   describe 'visits /students' do
     it 'should show a list of all students names' do
       student1 = Student.create!(name: 'Greg')
-      student1 = Student.create!(name: 'Martha')
-      student1 = Student.create!(name: 'Gertrude')
-      student1 = Student.create!(name: 'Marshall')
+      student2 = Student.create!(name: 'Martha')
+      student3 = Student.create!(name: 'Gertrude')
+      student4 = Student.create!(name: 'Marshall')
 
       visit students_path
 
