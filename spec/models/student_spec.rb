@@ -16,4 +16,13 @@ describe Student do
       end
     end
   end
+  describe 'relationships' do
+    context 'addresses' do
+      it 'should have many addresses' do
+        student = Student.new(name: 'Sam')
+
+        expect(student).to respond_to(:addresses)
+      end
+    end
+  end
 end
