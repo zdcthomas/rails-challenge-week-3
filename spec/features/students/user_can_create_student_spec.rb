@@ -11,7 +11,6 @@ describe 'A User' do
       name = 'JimBob'
 
       fill_in 'student[name]', with: name
-      save_and_open_page
       click_on 'Create'
 
       student = Student.find_by(name: name)
@@ -24,7 +23,7 @@ describe 'A User' do
       fill_in 'student[name]', with: name
       click_on 'Create'
 
-      student=Student.find_by(name: name)
+      student = Student.find_by(name: name)
       expect(current_path).to eq(student_path student)
       expect(page).to have_content(name)
     end

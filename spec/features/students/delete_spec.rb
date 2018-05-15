@@ -33,7 +33,7 @@ describe 'A User' do
       it 'should remove only the corresponding studnets name from the index' do
         student1 = Student.create!(name: "Glenn")
         student2 = Student.create!(name: "Garry")
-        student2 = Student.create!(name: "Ross")
+        student3 = Student.create!(name: "Ross")
 
         visit students_path
         within "#student_#{student1.id}" do

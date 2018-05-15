@@ -13,15 +13,16 @@ class StudentsController < ApplicationController
   end
   
   def create
-    student = Student.new(params[:name])
-    if student.save
-      redirect_to student_path student
+    @student = Student.new(student_params)
+    if @student.save
+      redirect_to student_path
     else
       redirect_to new_student_path
     end
   end
   
   def destroy
+    @student.destroy
 
     redirect_to students_path
   end
@@ -30,6 +31,12 @@ class StudentsController < ApplicationController
   end
   
   def update
+    @student.update(student_params)
+    if @student.save
+      redirect_to student_path
+    else
+      render :edit
+    end
   end
 
   private
