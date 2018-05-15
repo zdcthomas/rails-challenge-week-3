@@ -14,7 +14,7 @@ describe 'A User' do
       click_on 'Create'
 
       student = Student.find_by(name: name)
-      expect(student).to exist
+      expect(student.name).to eq(name)
     end
     it 'should redirect to the corresponding show page affter submission' do
       visit new_student_path 
