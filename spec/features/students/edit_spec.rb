@@ -13,7 +13,7 @@ describe 'A User' do
 
       name = 'Joe DiMaggio'
       fill_in 'student[name]', with: name
-      click_on 'Submit'
+      click_on 'Update Student'
 
       expect(current_path).to eq(student_path student)
     end

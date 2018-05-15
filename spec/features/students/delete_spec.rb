@@ -4,17 +4,17 @@ describe 'A User' do
     it 'should have a delete button for each student' do
       student1 = Student.create!(name: "Glenn")
       student2 = Student.create!(name: "Garry")
-      student2 = Student.create!(name: "Ross")
+      student3 = Student.create!(name: "Ross")
       visit students_path
 
       within "#student_#{student1.id}" do
-        expect(page).to have_button("Delete")
+        expect(page).to have_link("Delete")
       end
       within "#student_#{student2.id}" do
-        expect(page).to have_button("Delete")
+        expect(page).to have_link("Delete")
       end
       within "#student_#{student3.id}" do
-        expect(page).to have_button("Delete")
+        expect(page).to have_link("Delete")
       end
     end
     context 'after clicking delete' do
