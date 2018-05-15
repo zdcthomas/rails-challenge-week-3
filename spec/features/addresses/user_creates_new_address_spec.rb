@@ -16,6 +16,7 @@ describe 'A User' do
       description = 'Haunted'
       street_address = '1893 del monte'
       city = 'SpringField'
+      state = 'of mind'
       zip_code = 11111
       visit new_student_address student
 
@@ -23,6 +24,7 @@ describe 'A User' do
       fill_in 'address[description]', with: description
       fill_in 'address[street_address]', with: street_address
       fill_in 'address[city]', with: city
+      fill_in 'address[state]', with: state
       fill_in 'address[zip_code]', with: zip_code
       click_on 'Create'
 
@@ -33,6 +35,7 @@ describe 'A User' do
       description = 'Haunted'
       street_address = '1893 del monte'
       city = 'SpringField'
+      state = 'of mind'
       zip_code = 11111
       visit new_student_address student
 
@@ -40,6 +43,7 @@ describe 'A User' do
       fill_in 'address[description]', with: description
       fill_in 'address[street_address]', with: street_address
       fill_in 'address[city]', with: city
+      fill_in 'address[state]', with: state
       fill_in 'address[zip_code]', with: zip_code
       click_on 'Create'
 
