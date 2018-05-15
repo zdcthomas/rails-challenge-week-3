@@ -2,8 +2,8 @@ require 'rails_helper'
 describe 'A User' do
   describe 'visits /students/:id/addresses/new' do
     it 'should have the neccesary fields' do
-      student = Student.new(name: 'Sam')
-      visit new_student_address student
+      student = Student.create!(name: 'Sam')
+      visit new_student_address_path student
 
       expect(page).to have_field('address[description]')
       expect(page).to have_field('address[street_address]')
@@ -12,13 +12,13 @@ describe 'A User' do
       expect(page).to have_field('address[zip_code]')
     end
     it 'should redirect to students show page' do
-      student = Student.new(name: 'Sam')
+      student = Student.create!(name: 'Sam')
       description = 'Haunted'
       street_address = '1893 del monte'
       city = 'SpringField'
       state = 'of mind'
       zip_code = 11111
-      visit new_student_address student
+      visit new_student_address_path student
 
 
       fill_in 'address[description]', with: description
@@ -31,13 +31,13 @@ describe 'A User' do
       expect(current_path).to eq(student_path student)
     end
     it 'should redirect to students show page' do
-      student = Student.new(name: 'Sam')
+      student = Student.create!(name: 'Sam')
       description = 'Haunted'
       street_address = '1893 del monte'
       city = 'SpringField'
       state = 'of mind'
       zip_code = 11111
-      visit new_student_address student
+      visit new_student_address_path student
 
 
       fill_in 'address[description]', with: description

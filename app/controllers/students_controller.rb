@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :destroy, :edit, :update]
 
   def show
+    @addresses = @student.addresses
   end
 
   def index
