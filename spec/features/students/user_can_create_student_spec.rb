@@ -11,9 +11,10 @@ describe 'A User' do
       name = 'JimBob'
 
       fill_in 'student[name]', with: name
+      save_and_open_page
       click_on 'Create'
 
-      student Student.find_by(name: name)
+      student = Student.find_by(name: name)
       expect(student).to exist
     end
     it 'should redirect to the corresponding show page affter submission' do

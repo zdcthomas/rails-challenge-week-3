@@ -24,7 +24,7 @@ describe 'A User' do
 
       name = 'James Baldwin'
       fill_in 'student[name]', with: name
-      click_on 'Submit'
+      click_on 'Update Student'
 
       expect(page).to have_content(name)
     end

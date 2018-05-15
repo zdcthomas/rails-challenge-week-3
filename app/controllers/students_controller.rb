@@ -13,15 +13,17 @@ class StudentsController < ApplicationController
   end
   
   def create
-    student = Student.new(params[:student])
+    student = Student.new(params[:name])
     if student.save
-      redirect student_path student
+      redirect_to student_path student
     else
-      redirect new_student_path
+      redirect_to new_student_path
     end
   end
   
   def destroy
+
+    redirect_to students_path
   end
   
   def edit
